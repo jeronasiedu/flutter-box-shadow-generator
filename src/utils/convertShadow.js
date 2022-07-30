@@ -11,16 +11,16 @@ const massageShadow = (separatedShadow) => {
   const regex =
     /rgba?\((\s*\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}\s*)((?:,\s*[0-9.]*\s*)?)\)/
   separatedShadow.forEach((item) => {
-    const color = item[0].replace(regex, 'Color.fromRGBO')
+    const color = item[0].replace('rgba', 'Color.fromRGBO')
     const xOffset = item[1].replace('px', '')
     const yOffset = item[2].replace('px', '')
     const blurRadius = item[3].replace('px', '')
-    const spreadRadius = item[4].replace('px', '')
+    const spreadRadius = item[4]?.replace('px', '')
 
     const shadow = {
       color,
       blurRadius,
-      spreadRadius,
+      spreadRadius: spreadRadius || 0,
       offset: {
         xOffset,
         yOffset,

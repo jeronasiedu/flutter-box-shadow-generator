@@ -11,7 +11,24 @@ function App() {
   }
   return (
     <>
-      <main className=" container mx-auto py-8 px-4 ">
+      <nav className=" px-8 w-full shadow-sm bg-white p-3 ">
+        <div
+          className=" container mx-auto px-3
+          flex justify-between
+        "
+        >
+          <h3 className="text-2xl font-bold ">FLUTTER SHADOWS</h3>
+          <a
+            href="https://github.com/jeronasiedu"
+            target="_blank"
+            className="flex"
+          >
+            <img src="/github.svg" alt="github logo" className="w-8" />
+            <span className="hidden">contribute</span>
+          </a>
+        </div>
+      </nav>
+      <div className=" container mx-auto  px-4 py-24 ">
         <div className="text-center  mb-10 space-y-3">
           <h1 className="text-3xl font-semibold text-center">
             Beautiful Flutter box-shadow examples
@@ -21,21 +38,22 @@ function App() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 w-full gap-8 ">
-          {shadows.map((shadow, index) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5  w-full gap-14 ">
+          {shadows.map(({ shadow }, index) => (
             <div
-              className="w-full h-36 rounded bg-white flex items-center justify-center cursor-pointer transition-transform hover:scale-105 duration-300"
+              className="w-full h-36 rounded bg-white flex items-center justify-center cursor-pointer transition-transform hover:scale-105 duration-300 tooltip-container relative "
+              data-text={`click to copy shadow #${index + 1}`}
               style={{
                 boxShadow: shadow,
               }}
               key={index}
               onClick={() => copyShadow(shadow)}
             >
-              {'#' + index}
+              <span>{`#${index + 1}`}</span>
             </div>
           ))}
         </div>
-      </main>
+      </div>
     </>
   )
 }

@@ -11,9 +11,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-hot-toast": "^2.3.0",
-    "react-icons": "^4.4.0",
-    "react-tooltip": "^4.2.21"
+    "react-hot-toast": "^2.3.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.15",
