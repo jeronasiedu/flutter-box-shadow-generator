@@ -8,8 +8,6 @@ const sliceIntoChunks = (splitShadow) => {
 }
 const massageShadow = (separatedShadow) => {
   const results = []
-  const regex =
-    /rgba?\((\s*\d{1,3}\s*,\s*\d{1,3}\s*,\s*\d{1,3}\s*)((?:,\s*[0-9.]*\s*)?)\)/
   separatedShadow.forEach((item) => {
     const color = item[0].replace('rgba', 'Color.fromRGBO')
     const xOffset = item[1].replace('px', '')
