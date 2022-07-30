@@ -28,7 +28,7 @@ function App() {
           </a>
         </div>
       </nav>
-      <div className=" container mx-auto  px-4 py-24 ">
+      <div className=" container mx-auto  px-4 pt-10 pb-24">
         <div className="text-center  mb-10 space-y-3">
           <h1 className="text-3xl font-semibold text-center">
             Beautiful Flutter box-shadow examples
