@@ -11,9 +11,9 @@ function App() {
   }
   return (
     <>
-      <nav className=" px-8 w-full shadow-sm bg-white p-3 ">
+      <nav className="  w-full shadow-sm bg-white p-3 px-4 ">
         <div
-          className=" container mx-auto px-3
+          className=" container mx-auto
           flex justify-between
         "
         >
@@ -41,7 +41,7 @@ function App() {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5  w-full gap-14 ">
           {shadows.map(({ shadow }, index) => (
             <div
-              className="w-full h-36 rounded bg-white flex items-center justify-center cursor-pointer transition-transform hover:scale-105 duration-300 tooltip-container relative "
+              className="w-full h-32 md:h-36 rounded bg-white flex items-center justify-center cursor-pointer transition-transform md:hover:scale-105 duration-300 tooltip-container relative "
               data-text={`click to copy shadow #${index + 1}`}
               style={{
                 boxShadow: shadow,

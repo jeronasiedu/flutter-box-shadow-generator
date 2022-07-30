@@ -39,3 +39,8 @@ h6 {
 .tooltip-container:hover span {
   text-decoration: underline;
 }
+@media (max-width: 768px) {
+  .tooltip-container::before {
+    display: none;
+  }
+}
