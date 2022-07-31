@@ -27,15 +27,16 @@ h6 {
   background: #3b4453;
   padding: 0.1rem 1rem;
   color: #fff;
-  transform: translateX(-50%);
+  transform: translate(-50%, 1.5rem);
   opacity: 0;
   user-select: none;
-  transition: 0.5s opacity ease;
+  transition: 0.5s ease;
+  pointer-events: none;
 }
 
 .tooltip-container:hover::before {
   opacity: 1;
-  animation: jello 1s ease 0s 1 normal forwards;
+  transform: translate(-50%, 0);
 }
 .tooltip-container:hover span {
   text-decoration: underline;
@@ -45,31 +46,6 @@ h6 {
     display: none;
   }
 }
-
-@keyframes jello {
-  0%,
-  100% {
-    transform: translateX(0%) translateX(-50%);
-    transform-origin: 50% 50%;
-  }
-
-  15% {
-    transform: translateX(-30px) rotate(-6deg) translateX(-50%);
-  }
-
-  30% {
-    transform: translateX(15px) rotate(6deg) translateX(-50%);
-  }
-
-  45% {
-    transform: translateX(-15px) rotate(-3.6deg) translateX(-50%);
-  }
-
-  60% {
-    transform: translateX(9px) rotate(2.4deg) translateX(-50%);
-  }
-
-  75% {
-    transform: translateX(-6px) rotate(-1.2deg) translateX(-50%);
-  }
+.temporary {
+  display: none;
 }

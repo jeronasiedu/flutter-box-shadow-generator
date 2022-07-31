@@ -5,10 +5,11 @@ import useCopyToClipboard from './utils/copyToClipboard'
 function App() {
   const [value, copy] = useCopyToClipboard()
   const copyShadow = (shadow) => {
-    const result = convertShadow(shadow)
-    copy(JSON.stringify(result, null, 3))
-    toast.success('Shadow copied')
+    const results = convertShadow(shadow)
+    copy(results)
+    toast.success('Shadow copied successfully')
   }
+
   return (
     <>
       <nav className="  w-full shadow-sm bg-white p-3 px-4 ">

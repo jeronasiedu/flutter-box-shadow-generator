@@ -31,6 +31,27 @@ const massageShadow = (separatedShadow) => {
 const convertShadow = (shadow) => {
   const splattedShadow = shadow.split(/ (?![^(]*\))/)
   const chunkedShadows = sliceIntoChunks(splattedShadow)
-  return massageShadow(chunkedShadows)
+  const results = massageShadow(chunkedShadows)
+  return beautifyShadow(results)
+}
+function beautifyShadow(results) {
+  const htmlTemplate = results.map((item) => {
+    const { xOffset, yOffset } = item.offset
+    return `BoxShadow(
+          color: ${item.color},
+          blurRadius: ${item.blurRadius},
+          spreadRadius: ${item.spreadRadius}
+          offset: Offset(
+             ${xOffset},
+             ${yOffset},
+          ),
+       ),
+       `
+  })
+  const finalShadow = `BoxShadow:[
+    ${[...htmlTemplate].join('')}
+]
+  `
+  return finalShadow
 }
 export default convertShadow
