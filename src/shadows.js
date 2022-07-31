@@ -8,7 +8,7 @@ const cards = [
   { shadow: 'rgba(99, 99, 99, 0.2) 0px 2px 8px 0px' },
   {
     shadow:
-      'rgba(0, 0, 0, 0.16) 0px 1px 4px 0px, rgba(51, 51, 51,1) 0px 0px 0px 3px',
+      'rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px',
   },
   {
     shadow:
