@@ -37,10 +37,10 @@ const convertShadow = (shadow) => {
 function beautifyShadow(results) {
   const htmlTemplate = results.map((item) => {
     const { xOffset, yOffset } = item.offset
-    return `boxShadow(
+    return `BoxShadow(
           color: ${item.color},
           blurRadius: ${item.blurRadius},
-          spreadRadius: ${item.spreadRadius},
+          spreadRadius: ${item.spreadRadius}
           offset: Offset(
              ${xOffset},
              ${yOffset},
@@ -48,8 +48,8 @@ function beautifyShadow(results) {
        ),
        `
   })
-  const finalShadow = `BoxShadow:[
-    ${[...htmlTemplate].join('')}
+  const finalShadow = `boxShadow:[
+    ${[...htmlTemplate].join(' ')}
 ]
   `
   return finalShadow
