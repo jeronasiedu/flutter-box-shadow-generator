@@ -40,7 +40,7 @@ function beautifyShadow(results) {
     return `BoxShadow(
           color: ${item.color},
           blurRadius: ${item.blurRadius},
-          spreadRadius: ${item.spreadRadius}
+          spreadRadius: ${item.spreadRadius},
           offset: Offset(
              ${xOffset},
              ${yOffset},
