@@ -44,7 +44,7 @@ export default function Home() {
                 </span>
               </h1>
               <SplitText
-                text="Generate stunning Flutter box shadows with one click. No moreguessing values or tweaking parameters."
+                text="Generate stunning Flutter box shadows with one click. No more guessing values or tweaking parameters."
                 className="text-md sm:text-lg md:text-xl text-muted-foreground max-w-xl mx-auto leading-relaxed"
                 delay={100}
                 duration={0.6}
