@@ -1,7 +1,12 @@
 const sliceIntoChunks = (splitShadow) => {
   const results = []
+
+  // Various splitShadow's don't have spreadRadius in them.
+  // Using the regex `chunkSplitRefgex` the splitting is enhanced
   while (splitShadow.length > 0) {
-    let chunk = splitShadow.splice(0, 5)
+    const chunkSplitRegex = /px|%/;
+    const chunkSize = chunkSplitRegex.test(splitShadow[4] || '') ? 5 : 4;
+    const chunk = splitShadow.splice(0, chunkSize);
     results.push(chunk)
   }
   return results
@@ -29,7 +34,7 @@ const massageShadow = (separatedShadow) => {
   return results
 }
 const convertShadow = (shadow) => {
-  const splattedShadow = shadow.split(/ (?![^(]*\))/)
+  const splattedShadow = shadow.split(/[, ]+(?![^(]*\))/) // Change in regex to exclude an extra comma after a shadow.
   const chunkedShadows = sliceIntoChunks(splattedShadow)
   const results = massageShadow(chunkedShadows)
   return beautifyShadow(results)
@@ -38,20 +43,18 @@ function beautifyShadow(results) {
   const htmlTemplate = results.map((item) => {
     const { xOffset, yOffset } = item.offset
     return `BoxShadow(
-          color: ${item.color},
-          blurRadius: ${item.blurRadius},
-          spreadRadius: ${item.spreadRadius}
-          offset: Offset(
-             ${xOffset},
-             ${yOffset},
-          ),
-       ),
-       `
+    color: ${item.color},
+    blurRadius: ${item.blurRadius},
+    spreadRadius: ${item.spreadRadius}, // A comma was missing here
+    offset: Offset(
+      ${xOffset},
+      ${yOffset},
+    ),
+  ),
+`
   })
-  const finalShadow = `boxShadow:[
-    ${[...htmlTemplate].join(' ')}
-]
-  `
+  const finalShadow = `boxShadow: [
+    ${[...htmlTemplate].join(' ')}]`
   return finalShadow
 }
 export default convertShadow
