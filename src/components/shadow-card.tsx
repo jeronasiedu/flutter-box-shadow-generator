@@ -49,7 +49,9 @@ const ShadowCard = ({ shadow }: Props) => {
         )}
       </Button>
       {shadow.credit && (
-        <span className={"text-xs text-muted-foreground"}>{shadow.credit}</span>
+        <span className={"text-xs text-muted-foreground text-center"}>
+          {shadow.credit}
+        </span>
       )}
     </Card>
   );
