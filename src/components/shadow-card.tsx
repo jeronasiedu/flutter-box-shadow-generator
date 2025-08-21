@@ -28,7 +28,7 @@ const ShadowCard = ({ shadow }: Props) => {
   return (
     <Card
       className={
-        "h-48 group hover:scale-105 flex-col  transition-transform duration-300 relative overflow-hidden px-8 flex flex-col gap-4 items-center" +
+        "h-48 group hover:scale-105 transition-transform duration-300 relative overflow-hidden px-8 flex flex-col gap-4 items-center" +
         " justify-center"
       }
       style={{

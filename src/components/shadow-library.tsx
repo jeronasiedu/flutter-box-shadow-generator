@@ -9,7 +9,7 @@ const ShadowLibrary = () => {
     >
       <h3 className={"text-3xl mb-1 font-medium font-mono"}>Shadow Library</h3>
       <p className={"text-zinc-600"}>
-        Tap on mobile or hover on desktop to see options
+        Copy and paste the following shadows into your Flutter code.
       </p>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-12">
         {shadows.map((shadow) => (
